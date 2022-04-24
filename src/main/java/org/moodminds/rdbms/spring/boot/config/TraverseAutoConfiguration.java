@@ -42,8 +42,8 @@ public class TraverseAutoConfiguration {
     @ConditionalOnBean(DataSource.class)
     public Routes traverseRdbmsRoutes(ConnectionSource connectionSource) {
         return new Routes(connectionSource, config -> {
-            ofNullable(this.properties.getFetch()).ifPresent(config::fetch);
-            ofNullable(this.properties.getBatch()).ifPresent(config::batch);
+            ofNullable(properties.getFetch()).ifPresent(config::fetch);
+            ofNullable(properties.getBatch()).ifPresent(config::batch);
         });
     }
 
