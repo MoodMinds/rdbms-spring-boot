@@ -32,7 +32,7 @@ import static org.springframework.http.MediaType.TEXT_EVENT_STREAM_VALUE;
 @Service
 public class PersonService {
 
-    private static final Script<Query1<String>> FIRST_NAMES_QUERY = $$ -> $$
+    private static final Script<Query1<String>> FIRST_NAMES_QUERY = ($$, t) -> $$
             .query1("SELECT firstname FROM PERSON WHERE age > :age")
                 .type(Integer.class);
 
