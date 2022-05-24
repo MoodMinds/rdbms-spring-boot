@@ -33,8 +33,8 @@ import static org.springframework.http.MediaType.TEXT_EVENT_STREAM_VALUE;
 public class PersonService {
 
     private static final Script<Query1<String>> FIRST_NAMES_QUERY = $$ -> $$
-            .query1("SELECT firstname FROM PERSON WHERE age > :age", p -> p
-                .param(Integer.class));
+            .query1("SELECT firstname FROM PERSON WHERE age > :age")
+                .type(Integer.class);
 
     private static final Stream1<Integer, String, RdbmsException> FIRST_NAMES = ($, age) -> $
             .search(FIRST_NAMES_QUERY)
