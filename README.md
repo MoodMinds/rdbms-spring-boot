@@ -21,9 +21,9 @@ instances in your `@Component`:
 ```java
 import org.moodminds.emission.Emittable;
 import org.moodminds.rdbms.clause.Script;
+import org.moodminds.rdbms.lang.Query1;
 import org.moodminds.rdbms.route.Routes;
 import org.moodminds.rdbms.route.Stream1;
-import org.moodminds.rdbms.statement.Query1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
