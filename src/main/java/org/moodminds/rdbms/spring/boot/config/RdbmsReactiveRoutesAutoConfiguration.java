@@ -13,7 +13,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnSingleCandidate;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.dao.DataAccessResourceFailureException;
 import org.springframework.r2dbc.connection.ConnectionFactoryUtils;
@@ -26,7 +25,6 @@ import static org.springframework.boot.autoconfigure.condition.ConditionalOnWebA
 @ConditionalOnWebApplication(type = REACTIVE)
 @ConditionalOnClass({Routes.class, ConnectionFactory.class})
 @ConditionalOnSingleCandidate(ConnectionFactory.class)
-@EnableConfigurationProperties(RdbmsProperties.class)
 public class RdbmsReactiveRoutesAutoConfiguration {
 
     /**

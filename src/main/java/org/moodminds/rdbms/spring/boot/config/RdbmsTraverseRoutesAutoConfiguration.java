@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnSingleCandidate;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.CannotGetJdbcConnectionException;
 import org.springframework.jdbc.datasource.DataSourceUtils;
@@ -27,7 +26,6 @@ import static org.springframework.boot.autoconfigure.condition.ConditionalOnWebA
 @ConditionalOnWebApplication(type = SERVLET)
 @ConditionalOnClass({Routes.class, DataSource.class})
 @ConditionalOnSingleCandidate(DataSource.class)
-@EnableConfigurationProperties(RdbmsProperties.class)
 public class RdbmsTraverseRoutesAutoConfiguration {
 
     /**
