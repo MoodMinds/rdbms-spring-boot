@@ -55,7 +55,7 @@ public class PersonService {
     }
 }
 
-@RestController("/persons")
+@RestController
 public class PersonController {
 
     @Autowired
