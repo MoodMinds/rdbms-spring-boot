@@ -5,7 +5,6 @@ import org.moodminds.rdbms.config.Settings;
 import org.moodminds.rdbms.reactive.route.Routes;
 import org.moodminds.rdbms.render.Renderer;
 import org.springframework.beans.factory.BeanCreationException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -26,8 +25,11 @@ public class RdbmsSettingAutoConfiguration {
     /**
      * The RDBMS properties holder field.
      */
-    @Autowired
-    protected RdbmsProperties properties;
+    private final RdbmsProperties properties;
+
+    public RdbmsSettingAutoConfiguration(RdbmsProperties properties) {
+        this.properties = properties;
+    }
 
     /**
      * Create the RDBMS {@link Setting} bean.
